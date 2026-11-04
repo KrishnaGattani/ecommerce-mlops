@@ -92,7 +92,7 @@ elif page == "Demand Forecasting":
     if st.button("Predict Demand"):
         try:
             response = requests.post(
-                "http://127.0.0.1:8000/predict",
+                "https://ecommerce-mlops-api.onrender.com/predict",
                 json={
                     "store_id": int(store),
                     "item_id": int(item)
@@ -112,7 +112,6 @@ elif page == "Demand Forecasting":
 
         except requests.exceptions.RequestException as e:
             st.error(f"API Error: {e}")
-
 
 # 4. Model Monitoring
 elif page == "Model Monitoring":
